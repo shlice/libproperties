@@ -1,0 +1,36 @@
+#summary One-sentence summary of this page.
+#labels Phase-Implementation,Featured
+
+= Introduction =
+
+关于目录说明
+
+
+= Details =
+=============================================================
+==================关于源码目录的说明=========================
+=============================================================
+./bin 目录
+    编译好的库，共有5个子目录，代表5个版本。
+
+./doc 目录
+    主要是tinyxml2.4.3的文档，以后这里会放入项目相关文档。
+
+./include 目录
+    tinyxml头文件和libproperties头文件
+
+./src 目录
+    其中的libproperties子目录是libproperties源文件
+    其中的tinyxml子目录是tinyxml源文件
+    其中的test子目录是测试程序源文件
+
+./vc 目录
+    包含编译不同类型库的vc6和vc8工程
+
+./Makefile 文件
+    如果你使用mingw32或GCC，可以使用此Makefile启动编译器。
+    它可以编译出mingw32的静态库和类Unix系统下的静态/动态库。
+    具体使用选项请运行"make"查看。
+
+./README 文件
+    说明文件。
