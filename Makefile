@@ -21,10 +21,10 @@
 # main.o(.text+0x4): undefined reference to 'f'
 # collect2: ld return 1 exit status
 # The error message indicates that even though libtest.a contains a definition of f,the
-# linker did not find it.Thatâ€™s because libtest.a was searched when it was first encoun-
-# tered,and at that point the linker hadnâ€™t seen any references to f.
+# linker did not find it.That¡¯s because libtest.a was searched when it was first encoun-
+# tered,and at that point the linker hadn¡¯t seen any references to f.
 # On the other hand,if we use this line,no error messages are issued:
-# %gcc -o app app.o -L. â€“ltest
+# %gcc -o app app.o -L. ¨Cltest
 # The reason is that the reference to f in app.o causes the linker to include the test.o
 # object file from the libtest.a archive.
 # 
@@ -46,7 +46,7 @@
 #------------------------------------------------------------
 # Modified By harite Harite.K@gmail.com
 # Date: 07/10/2007
-#       1.æ ¹æ®æ–°çš„æºç ç›®å½•é‡æ–°è®¾ç½®é€‰é¡¹ã€‚
+#       1.¸ù¾İĞÂµÄÔ´ÂëÄ¿Â¼ÖØĞÂÉèÖÃÑ¡Ïî¡£
 #          modify some settings depend on new source directory
 #------------------------------------------------------------
 
@@ -86,9 +86,9 @@ LINUX_SHARED_EXPORT_ADD_LIBPATH = ./:$(BUILD_SHARED_DIR)
 #gcc's bug
 #if want to link rightly, some objects MUST at the right point of gcc's param
 #have funny~
-#å½“ç¼–è¯‘æ—¶ï¼Œæ­£ç¡®çš„ç›®æ ‡æ„å»ºé¡ºåºæ˜¯éå¸¸é‡è¦çš„
-#æ¯”å¦‚æ­¤å¤„libproperties_tinyxml_ext.oè¦å¤„åœ¨tinyxmlåï¼Œlibproperties.oåœ¨æœ€å
-#å’³~GCCçœŸæ˜¯è°ƒçš®é˜¿...
+#µ±±àÒëÊ±£¬ÕıÈ·µÄÄ¿±ê¹¹½¨Ë³ĞòÊÇ·Ç³£ÖØÒªµÄ
+#±ÈÈç´Ë´¦libproperties_tinyxml_ext.oÒª´¦ÔÚtinyxmlºó£¬libproperties.oÔÚ×îºó
+#¿È~GCCÕæÊÇµ÷Æ¤°¢...
 LIBPROPERTIESOBJS = tinystr.o tinyxml.o tinyxmlerror.o tinyxmlparser.o \
                    libproperties.o
 
