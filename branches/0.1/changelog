@@ -1,0 +1,29 @@
+|===========================================================|
+|Project: libproperties                                     |
+|Written by harite                                          |
+|Mailto:Harite.K@gmail.com                                  |
+|libproperties's homepage:                                  |
+|    http://code.google.com/p/libproperties                 |
+|                                                           |
+|libproperties is released under zlib license               |
+|===========================================================|
+
+
+2007/10/04
+   test beta version
+
+2007/10/05
+    release v1.0 version
+    So sorry for its bugs...
+
+2007/10/06   release v1.1 version
+    1.fixed some bugs in v1.0
+        +Makefile's bugs in Unix-like OS
+        +macro's bugs in ./include/libproperties.h
+    2.turn some file's encoding to UTF-8
+    3.add "dll" target in ./Makefile
+    4.modify "help" target for right message format.
+    5.Modify the file ./include/libproperties.h to be a interface
+    6.Move some header files to ./src/include
+      and there is only one lib header file in ./include.
+      It is simple to use the libproperties.
