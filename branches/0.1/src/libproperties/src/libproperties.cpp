@@ -29,10 +29,10 @@ distribution.
 
 
    Modified by harite  Date:2007/10/06
-         1.å°†ä¸€äº›Propertiesç±»çš„å‡½æ•°å®ç°ä»å¤´æ–‡ä»¶ä¸­ç§»åŠ¨åˆ°æ­¤å¤„ã€‚
+         1.½«Ò»Ğ©PropertiesÀàµÄº¯ÊıÊµÏÖ´ÓÍ·ÎÄ¼şÖĞÒÆ¶¯µ½´Ë´¦¡£
 */
 
-// è®©tinyxmlä½¿ç”¨stl
+// ÈÃtinyxmlÊ¹ÓÃstl
 // use the stl for tinyxml
 #ifndef TIXML_USE_STL
 #define TIXML_USE_STL
@@ -42,7 +42,7 @@ distribution.
 #include "tinyxml.h"
 
 
-// è°ƒè¯•
+// µ÷ÊÔ
 // just for debug
 //#define DEBUG_PROPERTIES_H
 
@@ -81,8 +81,8 @@ BOOL APIENTRY DllMain (HINSTANCE hInst     /* Library instance handle. */ ,
 
 
 /*
- é™¤éä½ æƒ³ä½¿ç”¨libpropertiesæºç ï¼Œå¦åˆ™ä¸è¦åœ¨ä½ çš„å·¥ç¨‹ä¸­å¼•ç”¨æ­¤æ–‡ä»¶ã€‚
-ä¸ºäº†ä½¿ç”¨libpropertiesçš„åº“ï¼Œä½ åªéœ€è¦libproperties.hå¤´æ–‡ä»¶ã€‚
+ ³ı·ÇÄãÏëÊ¹ÓÃlibpropertiesÔ´Âë£¬·ñÔò²»ÒªÔÚÄãµÄ¹¤³ÌÖĞÒıÓÃ´ËÎÄ¼ş¡£
+ÎªÁËÊ¹ÓÃlibpropertiesµÄ¿â£¬ÄãÖ»ĞèÒªlibproperties.hÍ·ÎÄ¼ş¡£
 */
 
 /*
@@ -321,15 +321,15 @@ public:
 
 
 /**
-* è®¾ç½®ä¸€ä¸ªâ€œé”®ï¼å€¼â€å¯¹,è‹¥é”®å·²ç»å­˜åœ¨åˆ™å°†å…¶æ›¿æ¢æˆæ–°å€¼
+* ÉèÖÃÒ»¸ö¡°¼ü£­Öµ¡±¶Ô,Èô¼üÒÑ¾­´æÔÚÔò½«ÆäÌæ»»³ÉĞÂÖµ
 * set a "key-value" pair, if the key exist, update its value
-* @param key è¦è®¾ç½®çš„é”® the key to set
-* @param value è¦è®¾ç½®çš„å€¼ the value to set
+* @param key ÒªÉèÖÃµÄ¼ü the key to set
+* @param value ÒªÉèÖÃµÄÖµ the value to set
 */
 void Properties::setProperty(string key, string value)
 {
 	iterator it = key_value.find(key);
-	if(it!=key_value.end())//å¯¹äºå·²ç»å­˜åœ¨çš„
+	if(it!=key_value.end())//¶ÔÓÚÒÑ¾­´æÔÚµÄ
 	{
 		(*it).second = value;
 	}
@@ -340,11 +340,11 @@ void Properties::setProperty(string key, string value)
 }
 
 /**
-* è¯»å–ä¸€ä¸ªé”®çš„å€¼ï¼Œå¦‚æœä¸å­˜åœ¨ï¼Œè¿”å›é»˜è®¤å€¼defaultvalue
+* ¶ÁÈ¡Ò»¸ö¼üµÄÖµ£¬Èç¹û²»´æÔÚ£¬·µ»ØÄ¬ÈÏÖµdefaultvalue
 * get value of a key, if the key is inexistence then return default value
-* @param key æƒ³è¦è·å¾—å€¼çš„é”® the key of you want value
-* @param defaultvalue å¦‚æœé”®ä¸å­˜åœ¨åˆ™è¿”å›æ­¤å‚æ•° the defaultvalue
-* @return è‹¥é”®å­˜åœ¨ï¼Œè¿”å›å…¶å¯¹åº”çš„å€¼ï¼›è‹¥ä¸å­˜åœ¨ï¼Œè¿”å›defaultvalue
+* @param key ÏëÒª»ñµÃÖµµÄ¼ü the key of you want value
+* @param defaultvalue Èç¹û¼ü²»´æÔÚÔò·µ»Ø´Ë²ÎÊı the defaultvalue
+* @return Èô¼ü´æÔÚ£¬·µ»ØÆä¶ÔÓ¦µÄÖµ£»Èô²»´æÔÚ£¬·µ»Ødefaultvalue
 */
 string Properties::getProperty(string key, string defaultvalue) const
 {
@@ -360,14 +360,14 @@ string Properties::getProperty(string key, string defaultvalue) const
 }
 
 /**
-* ä»xmlæ–‡ä»¶ä¸­è¯»å–â€œé”®ï¼å€¼â€å¯¹ load "key-value" from xml file
-* @param filename è¯»å–çš„xmlæ–‡ä»¶ï¼Œå¿…é¡»æ˜¯æŒ‰ç…§è§„å®šçš„æ ¼å¼
-* @return å¸ƒå°”å€¼ è¯»å–æˆåŠŸä¸å¦
+* ´ÓxmlÎÄ¼şÖĞ¶ÁÈ¡¡°¼ü£­Öµ¡±¶Ô load "key-value" from xml file
+* @param filename ¶ÁÈ¡µÄxmlÎÄ¼ş£¬±ØĞëÊÇ°´ÕÕ¹æ¶¨µÄ¸ñÊ½
+* @return ²¼¶ûÖµ ¶ÁÈ¡³É¹¦Óë·ñ
 */
 bool Properties::loadFromXML(const string filename)
 {
 	TiXmlDocument doc(filename.c_str());
-	bool loadOkay = doc.LoadFile();//ä»¥utf-8æ ¼å¼è¯»å–xmlæ–‡ä»¶
+	bool loadOkay = doc.LoadFile();//ÒÔutf-8¸ñÊ½¶ÁÈ¡xmlÎÄ¼ş
 	if (!loadOkay)
 	{
 		return false;
@@ -393,9 +393,9 @@ bool Properties::loadFromXML(const string filename)
 }
 
 /**
-* å°†é”®å€¼å¯¹æŒ‰ç…§ç±»ä¼¼javaä¸­Propertiesç±»çš„xmlæ ¼å¼å­˜å‚¨ store "key-value" to xml file
-* @param filename è¦ä¿å­˜çš„xmlæ–‡ä»¶å
-* @return å¸ƒå°”å€¼,ä»£è¡¨æ“ä½œæ‰§è¡ŒæˆåŠŸä¸å¦
+* ½«¼üÖµ¶Ô°´ÕÕÀàËÆjavaÖĞPropertiesÀàµÄxml¸ñÊ½´æ´¢ store "key-value" to xml file
+* @param filename Òª±£´æµÄxmlÎÄ¼şÃû
+* @return ²¼¶ûÖµ,´ú±í²Ù×÷Ö´ĞĞ³É¹¦Óë·ñ
 */
 bool Properties::storeToXML(const string filename) const
 {

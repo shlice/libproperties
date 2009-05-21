@@ -38,8 +38,8 @@ distribution.
 using std::map;
 using std::string;
 
-//å¦‚æœæƒ³è¦ç¼–è¯‘æˆdllï¼Œä½¿ç”¨æ—¶éœ€è¦ä¸€ä¸ªå¯¼å‡ºåº“lib
-//å½“ç”Ÿæˆdllåº“æ—¶å®šä¹‰æ­¤å®
+//Èç¹ûÏëÒª±àÒë³Édll£¬Ê¹ÓÃÊ±ĞèÒªÒ»¸öµ¼³ö¿âlib
+//µ±Éú³Édll¿âÊ±¶¨Òå´Ëºê
 /*
  if you want a dll in win32, this macro can help you.
  it will create a dll and its export lib.
@@ -64,8 +64,8 @@ class TiXmlDeclarationWithoutStandalone;
 
 /**
 *
-* ç±»ä¼¼javaä¸­çš„ç±»Propertiesï¼Œå…¶xmlæ–‡ä»¶æ ¼å¼ä¸€è‡´ã€‚
-* libpropertiesä¾›å¤–ç•Œä½¿ç”¨çš„åªæœ‰Propertiesç±».å› æ­¤ï¼Œä½ å¯ä»¥å¾ˆç®€å•çš„ä½¿ç”¨å®ƒã€‚
+* ÀàËÆjavaÖĞµÄÀàProperties£¬ÆäxmlÎÄ¼ş¸ñÊ½Ò»ÖÂ¡£
+* libproperties¹©Íâ½çÊ¹ÓÃµÄÖ»ÓĞPropertiesÀà.Òò´Ë£¬Äã¿ÉÒÔºÜ¼òµ¥µÄÊ¹ÓÃËü¡£
 * we give a c++ class as is class "Properties" in java
 * And they can use the xml file each other.
 * The lib have only one class, so You can use the lib
@@ -76,8 +76,8 @@ class TiXmlDeclarationWithoutStandalone;
 * Project: http://code.google.com/p/libproperties
 *
 *   Date:2007/10/06   Modified by harite
-*        1.å½“ç³»ç»Ÿä¸åœ¨win32ä¸‹æ—¶ï¼Œä¿®æ”¹å®LIBPROPERTIES_DLLIMPORTä¸ºç©º
-*        2.å°†ä¸»è¦å‡½æ•°å®ç°æ”¾å…¥cppæºæ–‡ä»¶ä¸­ï¼Œæ­¤å¤´æ–‡ä»¶åªç•™ä¸‹æœ€ç®€å•çš„æ¥å£å£°æ˜ã€‚
+*        1.µ±ÏµÍ³²»ÔÚwin32ÏÂÊ±£¬ĞŞ¸ÄºêLIBPROPERTIES_DLLIMPORTÎª¿Õ
+*        2.½«Ö÷Òªº¯ÊıÊµÏÖ·ÅÈëcppÔ´ÎÄ¼şÖĞ£¬´ËÍ·ÎÄ¼şÖ»ÁôÏÂ×î¼òµ¥µÄ½Ó¿ÚÉùÃ÷¡£
 */
 
 class LIBPROPERTIES_DLLIMPORT Properties
@@ -92,72 +92,72 @@ public:
 	virtual ~Properties(void){}
 
 	/**
-	* è®¾ç½®ä¸€ä¸ªâ€œé”®ï¼å€¼â€å¯¹,è‹¥é”®å·²ç»å­˜åœ¨åˆ™å°†å…¶æ›¿æ¢æˆæ–°å€¼
+	* ÉèÖÃÒ»¸ö¡°¼ü£­Öµ¡±¶Ô,Èô¼üÒÑ¾­´æÔÚÔò½«ÆäÌæ»»³ÉĞÂÖµ
 	* set a "key-value" pair, if the key exist, update its value
-	* @param key è¦è®¾ç½®çš„é”® the key to set
-	* @param value è¦è®¾ç½®çš„å€¼ the value to set
+	* @param key ÒªÉèÖÃµÄ¼ü the key to set
+	* @param value ÒªÉèÖÃµÄÖµ the value to set
 	*/
 	inline void setProperty(string key, string value);
 
 	/**
-	* è¯»å–ä¸€ä¸ªé”®çš„å€¼ï¼Œå¦‚æœä¸å­˜åœ¨ï¼Œè¿”å›é»˜è®¤å€¼defaultvalue
+	* ¶ÁÈ¡Ò»¸ö¼üµÄÖµ£¬Èç¹û²»´æÔÚ£¬·µ»ØÄ¬ÈÏÖµdefaultvalue
 	* get value of a key, if the key is inexistence then return default value
-	* @param key æƒ³è¦è·å¾—å€¼çš„é”® the key of you want value
-	* @param defaultvalue å¦‚æœé”®ä¸å­˜åœ¨åˆ™è¿”å›æ­¤å‚æ•° the defaultvalue
-	* @return è‹¥é”®å­˜åœ¨ï¼Œè¿”å›å…¶å¯¹åº”çš„å€¼ï¼›è‹¥ä¸å­˜åœ¨ï¼Œè¿”å›defaultvalue
+	* @param key ÏëÒª»ñµÃÖµµÄ¼ü the key of you want value
+	* @param defaultvalue Èç¹û¼ü²»´æÔÚÔò·µ»Ø´Ë²ÎÊı the defaultvalue
+	* @return Èô¼ü´æÔÚ£¬·µ»ØÆä¶ÔÓ¦µÄÖµ£»Èô²»´æÔÚ£¬·µ»Ødefaultvalue
 	*/
 	inline string getProperty(string key, string defaultvalue) const;
 
 	/**
-	* ä»xmlæ–‡ä»¶ä¸­è¯»å–â€œé”®ï¼å€¼â€å¯¹ load "key-value" from xml file
-	* @param filename è¯»å–çš„xmlæ–‡ä»¶ï¼Œå¿…é¡»æ˜¯æŒ‰ç…§è§„å®šçš„æ ¼å¼
-	* @return å¸ƒå°”å€¼ è¯»å–æˆåŠŸä¸å¦
+	* ´ÓxmlÎÄ¼şÖĞ¶ÁÈ¡¡°¼ü£­Öµ¡±¶Ô load "key-value" from xml file
+	* @param filename ¶ÁÈ¡µÄxmlÎÄ¼ş£¬±ØĞëÊÇ°´ÕÕ¹æ¶¨µÄ¸ñÊ½
+	* @return ²¼¶ûÖµ ¶ÁÈ¡³É¹¦Óë·ñ
 	*/
 	inline bool loadFromXML(const string filename);
 
 	/**
-	* å°†é”®å€¼å¯¹æŒ‰ç…§ç±»ä¼¼javaä¸­Propertiesç±»çš„xmlæ ¼å¼å­˜å‚¨ store "key-value" to xml file
-	* @param filename è¦ä¿å­˜çš„xmlæ–‡ä»¶å
-	* @return å¸ƒå°”å€¼,ä»£è¡¨æ“ä½œæ‰§è¡ŒæˆåŠŸä¸å¦
+	* ½«¼üÖµ¶Ô°´ÕÕÀàËÆjavaÖĞPropertiesÀàµÄxml¸ñÊ½´æ´¢ store "key-value" to xml file
+	* @param filename Òª±£´æµÄxmlÎÄ¼şÃû
+	* @return ²¼¶ûÖµ,´ú±í²Ù×÷Ö´ĞĞ³É¹¦Óë·ñ
 	*/
 	inline bool storeToXML(const string filename) const;
 
 	/**
-	* æ¸…ç©ºé”®å€¼å¯¹ clear "key-value"
+	* Çå¿Õ¼üÖµ¶Ô clear "key-value"
 	*/
 	inline void clear() { key_value.clear(); }
 
 	/**
-	* è¿”å›æŒ‡å‘ç¬¬ä¸€å¯¹é”®å€¼çš„const_iterator
+	* ·µ»ØÖ¸ÏòµÚÒ»¶Ô¼üÖµµÄconst_iterator
 	* return the const_iterator of first "key-value" pair
 	*/
 	inline const_iterator begin() const { return key_value.begin(); }
     
     /**
-	* è¿”å›æŒ‡å‘ç¬¬ä¸€å¯¹é”®å€¼çš„iterator
+	* ·µ»ØÖ¸ÏòµÚÒ»¶Ô¼üÖµµÄiterator
 	* return the const_iterator of first "key-value" pair
 	*/
     // Modified by harite Date:2007/10/07
-    // æ—¢ç„¶å¯ä»¥æä¾›æ–¹ä¾¿ï¼Œä¸ºä»€ä¹ˆä¸ï¼
+    // ¼ÈÈ»¿ÉÒÔÌá¹©·½±ã£¬ÎªÊ²Ã´²»£¡
 	inline iterator begin() { return key_value.begin(); }
 
 	/**
-	* è¿”å›æŒ‡å‘æœ€åä¸€å¯¹é”®å€¼ä¹‹åçš„const_iterator
+	* ·µ»ØÖ¸Ïò×îºóÒ»¶Ô¼üÖµÖ®ºóµÄconst_iterator
 	* return the next const_iterator of end "key-value" pair
 	*/
 	inline const_iterator end() const { return key_value.end(); }
     
     /**
-	* è¿”å›æŒ‡å‘æœ€åä¸€å¯¹é”®å€¼ä¹‹åçš„iterator
+	* ·µ»ØÖ¸Ïò×îºóÒ»¶Ô¼üÖµÖ®ºóµÄiterator
 	* return the next const_iterator of end "key-value" pair
 	*/
     // Modified by harite Date:2007/10/07
-    // æ—¢ç„¶å¯ä»¥æä¾›æ–¹ä¾¿ï¼Œä¸ºä»€ä¹ˆä¸ï¼
+    // ¼ÈÈ»¿ÉÒÔÌá¹©·½±ã£¬ÎªÊ²Ã´²»£¡
 	inline iterator end() { return key_value.end(); }
 
 private:
 	/**
-	* stlä¸­çš„mapï¼Œç››æ”¾é”®å€¼å¯¹
+	* stlÖĞµÄmap£¬Ê¢·Å¼üÖµ¶Ô
 	*/
 	map<string, string> key_value;
 
